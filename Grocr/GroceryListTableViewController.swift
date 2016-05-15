@@ -29,7 +29,7 @@ class GroceryListTableViewController: UITableViewController {
   
   // MARK: Properties 
   var items = [GroceryItem]()
-  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/taco")
   let usersRef = Firebase(url: "https://grocr-app.firebaseio.com/online")
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
@@ -58,13 +58,20 @@ class GroceryListTableViewController: UITableViewController {
       var newItems = [GroceryItem]()
       
       for item in snapshot.children {
+        if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil){
+            self.items = newItems
+            self.tableView.reloadData()
+        
         
         let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
+        
         newItems.append(groceryItem)
-      }
+        }
+        }
+            self.items = newItems
+            self.tableView.reloadData()
       
-      self.items = newItems
-      self.tableView.reloadData()
+      
     })
     
     ref.observeAuthEventWithBlock { authData in
@@ -82,7 +89,7 @@ class GroceryListTableViewController: UITableViewController {
         // When the user disconnects remove the value
         currentUserRef.onDisconnectRemoveValue()
       }
-      
+    
     }
     
     // Create a value observer
