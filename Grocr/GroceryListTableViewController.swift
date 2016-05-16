@@ -29,7 +29,7 @@ class GroceryListTableViewController: UITableViewController {
   
   // MARK: Properties 
   var items = [GroceryItem]()
-  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/taco")
+  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
   let usersRef = Firebase(url: "https://grocr-app.firebaseio.com/online")
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
@@ -60,18 +60,20 @@ class GroceryListTableViewController: UITableViewController {
       for item in snapshot.children {
         if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil){
             self.items = newItems
-            self.tableView.reloadData()
+                self.tableView.reloadData()
         
         
         let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
         
         newItems.append(groceryItem)
+            print(groceryItem)
+            
         }
-        }
-            self.items = newItems
-            self.tableView.reloadData()
-      
-      
+        
+        
+            //self.tableView.reloadData()
+    }
+    
     })
     
     ref.observeAuthEventWithBlock { authData in
@@ -122,9 +124,12 @@ class GroceryListTableViewController: UITableViewController {
     let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath)
     
     let groceryItem = items[indexPath.row]
+   
+    
     
     cell.textLabel?.text = groceryItem.name
-
+ print(groceryItem.name)
+    
     cell.detailTextLabel?.text = groceryItem.addedByUser
     
     // Determine whether the cell is checked
@@ -183,6 +188,8 @@ class GroceryListTableViewController: UITableViewController {
       cell.textLabel?.textColor = UIColor.grayColor()
       cell.detailTextLabel?.textColor = UIColor.grayColor()
     }
+    
+    
   }
   
   // MARK: Add Item

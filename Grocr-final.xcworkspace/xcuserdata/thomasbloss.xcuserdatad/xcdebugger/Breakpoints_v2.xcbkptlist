@@ -10,43 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485042150.484813"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485042175.625828"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,43 +42,168 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485050669.732862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485050669.732862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "GroceryListTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485050669.732862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "addButtonDidTouch(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485050669.732862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "addButtonDidTouch(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485048587.941835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "GroceryListTableViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Grocr.GroceryListTableViewController.viewDidAppear (Swift.Bool) -&gt; ()"
+                  symbolName = "Grocr.GroceryListTableViewController.items.getter : Swift.Array&lt;Grocr.GroceryItem&gt;"
                   moduleName = "Grocr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
-                  timestampString = "485047002.102478"
+                  timestampString = "485049451.875318"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "868">
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "35">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Grocr.GroceryListTableViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1)"
+                  symbolName = "Grocr.GroceryListTableViewController.items.setter : Swift.Array&lt;Grocr.GroceryItem&gt;"
                   moduleName = "Grocr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
-                  timestampString = "485047002.102787"
+                  timestampString = "485049451.875466"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "3736">
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.init (style : __C.UITableViewStyle) -&gt; Grocr.GroceryListTableViewController"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.87562"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "101">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Grocr.GroceryListTableViewController"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.875778"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "170">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Grocr.GroceryListTableViewController&gt;"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.875944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "101">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,12 +215,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +231,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +247,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,12 +263,185 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
-            timestampString = "485046502.227949"
+            timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485048871.15529"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.viewDidAppear (Swift.Bool) -&gt; ()"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.881191"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "149">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.881343"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485049155.124486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "GroceryListTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.ref.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.Firebase&gt;"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.883537"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.ref.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.Firebase&gt;"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.883761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.init (style : __C.UITableViewStyle) -&gt; Grocr.GroceryListTableViewController"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.883919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Grocr.GroceryListTableViewController"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.884082"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "193">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grocr.GroceryListTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Grocr.GroceryListTableViewController&gt;"
+                  moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomasbloss/Downloads/Grocr-final-2/Grocr/GroceryListTableViewController.swift"
+                  timestampString = "485049451.884238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485050669.732862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocr/GroceryListTableViewController.swift"
+            timestampString = "485050669.732862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
