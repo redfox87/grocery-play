@@ -170,7 +170,6 @@ class GroceryListTableViewController: UITableViewController {
     
     // Get the associated grocery item
     let groceryItem = items[indexPath.row]
-    
     // Get the new completion status
     let toggledCompletion = !groceryItem.completed
     let refPath = "https://containers.firebaseio.com/grocery-items/"

@@ -199,7 +199,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Grocery List" id="OJg-kh-Sh2">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="qmV-B5-EON" customClass="backPath">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="qmV-B5-EON" customClass="backPath">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backLoad:" destination="WRG-qR-ebT" id="HJU-ok-qD7"/>
