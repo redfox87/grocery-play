@@ -40,13 +40,11 @@ struct GroceryItem {
   }
   
   init(snapshot: FDataSnapshot) {
-        name = snapshot.value["name"] as! String
-        addedByUser = snapshot.value["addedByUser"] as! String
-        completed = snapshot.value["completed"] as! Bool
-        key = snapshot.key
-
-        ref = snapshot.ref
-    
+    key = snapshot.key
+    name = snapshot.value["name"] as! String
+    addedByUser = snapshot.value["addedByUser"] as! String
+    completed = snapshot.value["completed"] as! Bool
+    ref = snapshot.ref
   }
   
   func toAnyObject() -> AnyObject {
