@@ -41,6 +41,8 @@ struct GroceryItem {
   
   init(snapshot: FDataSnapshot) {
     key = snapshot.key
+    print(snapshot.key)
+    print(snapshot.ref)
     name = snapshot.value["name"] as! String
     addedByUser = snapshot.value["addedByUser"] as! String
     completed = snapshot.value["completed"] as! Bool

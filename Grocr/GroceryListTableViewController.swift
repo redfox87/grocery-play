@@ -33,12 +33,13 @@ class GroceryListTableViewController: UITableViewController {
   let usersRef = Firebase(url: "https://grocr-app.firebaseio.com/online")
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
+  var newPath = ""
   
   // MARK: UIViewController Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
     
     // Set up swipe to delete
     tableView.allowsMultipleSelectionDuringEditing = false
@@ -168,7 +169,10 @@ class GroceryListTableViewController: UITableViewController {
     
     // Get the new completion status
     let toggledCompletion = !groceryItem.completed
-    self.ref =  Firebase(url: "https://containers.firebaseio.com/grocery-items/" + groceryItem.name)
+    let refPath = "https://containers.firebaseio.com/grocery-items/"
+    newPath = newPath + groceryItem.name.lowercaseString + "/"
+    
+    self.ref = Firebase(url: refPath + newPath)
     self.tableView.reloadData()
     viewDidAppear(true)
     //self.tableView.reloadData()
@@ -213,6 +217,7 @@ class GroceryListTableViewController: UITableViewController {
         let groceryItem = GroceryItem(name: textField.text!, addedByUser: self.user.email, completed: false)
         
         let groceryItemRef = self.ref.childByAppendingPath(textField.text!.lowercaseString)
+        print(self.ref)
         // Save the grocery items in its AnyObject form
         groceryItemRef.setValue(groceryItem.toAnyObject())
     }
