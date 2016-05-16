@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,7 +62,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
-            endingLineNumber = "135">
+            endingLineNumber = "135"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -92,9 +94,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "toggleCellCheckbox(_:isCompleted:)"
-            landmarkType = "7">
+            endingLineNumber = "210">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -108,7 +108,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
-            endingLineNumber = "213">
+            endingLineNumber = "213"
+            landmarkName = "addButtonDidTouch(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -421,8 +423,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "GroceryListTableViewController"
-            landmarkType = "3">
+            landmarkName = "viewDidDisappear(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -436,9 +438,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "viewDidDisappear(_:)"
-            landmarkType = "7">
+            endingLineNumber = "131">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

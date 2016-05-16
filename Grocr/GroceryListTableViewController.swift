@@ -58,18 +58,14 @@ class GroceryListTableViewController: UITableViewController {
       var newItems = [GroceryItem]()
       
       for item in snapshot.children {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil){
             self.items = newItems
                 self.tableView.reloadData()
-        
-=======
->>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
-        
+ 
         let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
         newItems.append(groceryItem)
-<<<<<<< HEAD
+
             print(groceryItem)
             
         }
