@@ -32,9 +32,10 @@ class GroceryListTableViewController: UITableViewController {
   var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
   let usersRef = Firebase(url: "https://grocr-app.firebaseio.com/online")
   var user: User!
-  var userCountBarButtonItem: UIBarButtonItem!
+  var backPath: UIBarButtonItem!
   var newPath = ""
-  
+  var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
+  var newRef = ""
   // MARK: UIViewController Lifecycle
   
   override func viewDidLoad() {
@@ -46,9 +47,9 @@ class GroceryListTableViewController: UITableViewController {
     tableView.allowsMultipleSelectionDuringEditing = false
     
     // User Count
-    userCountBarButtonItem = UIBarButtonItem(title: "1", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("userCountButtonDidTouch"))
-    userCountBarButtonItem.tintColor = UIColor.whiteColor()
-    navigationItem.leftBarButtonItem = userCountBarButtonItem
+//    backPath = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: Selector(refresh))
+//    backPath.tintColor = UIColor.redColor()
+//    navigationItem.leftBarButtonItem = backPath
     
   }
   
@@ -112,10 +113,11 @@ class GroceryListTableViewController: UITableViewController {
       if snapshot.exists() {
         
         // Get the number of online users from the childrenCount property
-        self.userCountBarButtonItem?.title = snapshot.childrenCount.description
-      } else {
-        self.userCountBarButtonItem?.title = "0"
-      }
+       // self.backPath.title = "Back"
+        }
+//      } else {
+//        self.userCountBarButtonItem?.title = "0"
+//      }
     })
     
   }
@@ -172,10 +174,26 @@ class GroceryListTableViewController: UITableViewController {
     // Get the new completion status
     let toggledCompletion = !groceryItem.completed
     let refPath = "https://containers.firebaseio.com/grocery-items/"
+    
+    
     newPath = newPath + groceryItem.name.lowercaseString + "/"
     
-    self.ref = Firebase(url: refPath + newPath)
-    self.tableView.reloadData()
+    var newRef = refPath
+    if pathArray.count <= 0 {
+    newRef = refPath + newPath
+    pathArray.append(newRef)
+    }
+    else{
+        pathArray.append((pathArray[pathArray.count - 1] + groceryItem.name.lowercaseString + "/"))
+    }
+    //newRef = pathArray[pathArray.count - 1]
+    
+    self.ref = Firebase(url: pathArray[pathArray.count - 1])
+    
+    
+    print(pathArray, pathArray.count)
+    
+    //self.tableView.reloadData()
     viewDidAppear(true)
     //self.tableView.reloadData()
     
@@ -203,10 +221,25 @@ class GroceryListTableViewController: UITableViewController {
   
   
   // MARK: Add Item
+    @IBAction func backLoad(sender: UIBarButtonItem) {
+        
+        if pathArray.count >= 2 {
+        self.ref = Firebase(url: pathArray[pathArray.count - 2])
+        pathArray.removeLast()
+            print(pathArray, pathArray.count)
+            // self.tableView.reloadData()
+            newPath = String(pathArray[pathArray.count - 1])
+            viewDidAppear(true)
+        }
+        else{
+            print("erase button")
+        }
+        
+    }
   
   @IBAction func addButtonDidTouch(sender: AnyObject) {
     // Alert View for input
-    var alert = UIAlertController(title: "Grocery Item",
+    let alert = UIAlertController(title: "Grocery Item",
       message: "Add an Item",
       preferredStyle: .Alert)
     
@@ -242,8 +275,8 @@ class GroceryListTableViewController: UITableViewController {
       completion: nil)
   }
   
-  func userCountButtonDidTouch() {
-    performSegueWithIdentifier(ListToUsers, sender: nil)
-  }
+//  func userCountButtonDidTouch() {
+//    performSegueWithIdentifier(ListToUsers, sender: nil)
+//  }
   
 }

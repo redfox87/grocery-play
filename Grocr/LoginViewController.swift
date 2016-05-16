@@ -47,9 +47,9 @@ class LoginViewController: UIViewController {
     
     ref.observeAuthEventWithBlock { (authData) -> Void in
         
-        if authData != nil {
-            self.performSegueWithIdentifier(self.LoginToList, sender: nil)
-        }
+//        if authData != nil {
+//            self.performSegueWithIdentifier(self.LoginToList, sender: nil)
+//        }
     
     }}
   
