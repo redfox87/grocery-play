@@ -10,6 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
+<<<<<<< HEAD
             timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -17,6 +18,15 @@
             endingLineNumber = "110"
             landmarkName = "GroceryListTableViewController"
             landmarkType = "3">
+=======
+            timestampString = "485038007.886692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+>>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,6 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
+<<<<<<< HEAD
             timestampString = "485050669.732862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -33,11 +44,21 @@
             endingLineNumber = "123"
             landmarkName = "GroceryListTableViewController"
             landmarkType = "3">
+=======
+            timestampString = "485038007.886692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+>>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -273,15 +294,25 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+=======
+>>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocr/GroceryListTableViewController.swift"
+<<<<<<< HEAD
             timestampString = "485048871.15529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
+=======
+            timestampString = "485038594.530013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+>>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
             <Locations>

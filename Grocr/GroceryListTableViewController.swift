@@ -58,6 +58,7 @@ class GroceryListTableViewController: UITableViewController {
       var newItems = [GroceryItem]()
       
       for item in snapshot.children {
+<<<<<<< HEAD
 
         if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil){
             self.items = newItems
@@ -80,11 +81,19 @@ class GroceryListTableViewController: UITableViewController {
         let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
         newItems.append(groceryItem)
 >>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
+=======
+        
+        let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
+        newItems.append(groceryItem)
+>>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
       }
       
       self.items = newItems
       self.tableView.reloadData()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
+=======
 >>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
 =======
 >>>>>>> parent of 68073ed... if statement filters out user info and allows to dive down.
