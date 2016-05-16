@@ -27,7 +27,7 @@ struct GroceryItem {
   let key: String!
   let name: String!
   let addedByUser: String!
-  let ref: Firebase?
+  var ref: Firebase?
   var completed: Bool!
   
   // Initialize from arbitrary data

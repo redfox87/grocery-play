@@ -47,36 +47,42 @@ class GroceryListTableViewController: UITableViewController {
     userCountBarButtonItem = UIBarButtonItem(title: "1", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("userCountButtonDidTouch"))
     userCountBarButtonItem.tintColor = UIColor.whiteColor()
     navigationItem.leftBarButtonItem = userCountBarButtonItem
+    
   }
   
   override func viewDidAppear(animated: Bool) {
+    //var myRef = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
     super.viewDidAppear(animated)
     
     // [1] Call the queryOrderedByChild function to return a reference that queries by the "completed" property
+    
     ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
       
       var newItems = [GroceryItem]()
       
       for item in snapshot.children {
         
-        if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil){
+        if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil) {
             self.items = newItems
-            self.tableView.reloadData()
+            //self.tableView.reloadData()
             
             let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
             newItems.append(groceryItem)
-            
-            print(groceryItem)
+            //myRef = snapshot.ref
+            //print(groceryItem)
             
         }
-
-        
-        
-      }
       
-      self.items = newItems
-      self.tableView.reloadData()
-    })
+      //self.tableView.reloadData()
+        print(snapshot.ref)
+        }
+        //self.items = newItems
+        //if (myRef == self.ref) {
+            self.items = newItems
+            self.tableView.reloadData()
+    //}
+        })
+    
     
     ref.observeAuthEventWithBlock { authData in
       
@@ -132,7 +138,7 @@ class GroceryListTableViewController: UITableViewController {
     cell.detailTextLabel?.text = groceryItem.addedByUser
     
     // Determine whether the cell is checked
-    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+    //toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     
     return cell
   }
@@ -163,31 +169,32 @@ class GroceryListTableViewController: UITableViewController {
     // Get the new completion status
     let toggledCompletion = !groceryItem.completed
     self.ref =  Firebase(url: "https://containers.firebaseio.com/grocery-items/" + groceryItem.name)
+    self.tableView.reloadData()
     viewDidAppear(true)
     //self.tableView.reloadData()
     
 
     
-    // Determine whether the cell is checked and modify it's view properties
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-    
-    // Call updateChildValues on the grocery item's reference with just the new completed status
-    groceryItem.ref?.updateChildValues([
-      "completed": toggledCompletion
-      ])
-  }
-  
-  func toggleCellCheckbox(cell: UITableViewCell, isCompleted: Bool) {
-    if !isCompleted {
-      cell.accessoryType = UITableViewCellAccessoryType.None
-      cell.textLabel?.textColor = UIColor.blackColor()
-      cell.detailTextLabel?.textColor = UIColor.blackColor()
-    } else {
-      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-      cell.textLabel?.textColor = UIColor.grayColor()
-      cell.detailTextLabel?.textColor = UIColor.grayColor()
+//    // Determine whether the cell is checked and modify it's view properties
+//    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+//    
+//    // Call updateChildValues on the grocery item's reference with just the new completed status
+//    groceryItem.ref?.updateChildValues([
+//      "completed": toggledCompletion
+//      ])
+//  }
+//  
+//  func toggleCellCheckbox(cell: UITableViewCell, isCompleted: Bool) {
+//    if !isCompleted {
+//      cell.accessoryType = UITableViewCellAccessoryType.None
+//      cell.textLabel?.textColor = UIColor.blackColor()
+//      cell.detailTextLabel?.textColor = UIColor.blackColor()
+//    } else {
+//      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+//      cell.textLabel?.textColor = UIColor.grayColor()
+//      cell.detailTextLabel?.textColor = UIColor.grayColor()
     }
-  }
+  
   
   // MARK: Add Item
   
