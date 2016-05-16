@@ -39,7 +39,8 @@ class GroceryListTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+    
+    
     
     // Set up swipe to delete
     tableView.allowsMultipleSelectionDuringEditing = false
@@ -60,6 +61,7 @@ class GroceryListTableViewController: UITableViewController {
     ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
       
       var newItems = [GroceryItem]()
+        print(self.newPath)
       
       for item in snapshot.children {
         
@@ -75,7 +77,7 @@ class GroceryListTableViewController: UITableViewController {
         }
       
       //self.tableView.reloadData()
-        print(snapshot.ref)
+       // print(snapshot.ref)
         }
         //self.items = newItems
         //if (myRef == self.ref) {
@@ -217,9 +219,11 @@ class GroceryListTableViewController: UITableViewController {
         let groceryItem = GroceryItem(name: textField.text!, addedByUser: self.user.email, completed: false)
         
         let groceryItemRef = self.ref.childByAppendingPath(textField.text!.lowercaseString)
-        print(self.ref)
+        print(groceryItemRef)
         // Save the grocery items in its AnyObject form
         groceryItemRef.setValue(groceryItem.toAnyObject())
+        self.viewDidAppear(true)
+        
     }
     
     let cancelAction = UIAlertAction(title: "Cancel",
