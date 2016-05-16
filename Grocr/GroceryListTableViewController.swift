@@ -59,8 +59,19 @@ class GroceryListTableViewController: UITableViewController {
       
       for item in snapshot.children {
         
-        let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
-        newItems.append(groceryItem)
+        if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil){
+            self.items = newItems
+            self.tableView.reloadData()
+            
+            let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
+            newItems.append(groceryItem)
+            
+            print(groceryItem)
+            
+        }
+
+        
+        
       }
       
       self.items = newItems
