@@ -22,20 +22,32 @@
 
 import UIKit
 
-class GroceryListTableViewController: UITableViewController {
+class GroceryListTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    struct Reference {
+         static var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+         static var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
+
+
+    }
 
   // MARK: Constants
   let ListToUsers = "ListToUsers"
-  
-  // MARK: Properties 
+  let imagePicker = UIImagePickerController()
+
+  // MARK: Properties
   var items = [GroceryItem]()
-  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+//  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
   let usersRef = Firebase(url: "https://grocr-app.firebaseio.com/online")
   var user: User!
   var backPath: UIBarButtonItem!
   var newPath = ""
-  var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
+//  var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
   var newRef = ""
+    var label1 = UILabel.self
+    var label2 = UILabel.self
+    
+    
+    
   // MARK: UIViewController Lifecycle
   
   override func viewDidLoad() {
@@ -54,41 +66,46 @@ class GroceryListTableViewController: UITableViewController {
   }
   
   override func viewDidAppear(animated: Bool) {
-    //var myRef = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+    //var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
     super.viewDidAppear(animated)
-    
+    print(Reference.ref)
     // [1] Call the queryOrderedByChild function to return a reference that queries by the "completed" property
     
-    ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
+    Reference.ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
       
       var newItems = [GroceryItem]()
-        print(self.newPath)
+//        print(snapshot)
       
       for item in snapshot.children {
         
-        if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil) {
+        if (item.value["name"] != nil && item.value["image"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil) {
             self.items = newItems
-            //self.tableView.reloadData()
+//            self.tableView.reloadData()
             
             let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
             newItems.append(groceryItem)
-            //myRef = snapshot.ref
-            //print(groceryItem)
-            
         }
+        self.items = newItems
+        self.tableView.reloadData()
+//        print(self.ref)
+            //self.ref = snapshot.ref
+        }})
+            //print(groceryItem)
+            //
+//        }
       
       //self.tableView.reloadData()
        // print(snapshot.ref)
-        }
-        //self.items = newItems
-        //if (myRef == self.ref) {
-            self.items = newItems
-            self.tableView.reloadData()
+//        }
+//        //self.items = newItems
+//        //if (myRef == self.ref) {
+//            self.items = newItems
+//            self.tableView.reloadData()
     //}
-        })
+//        })
     
     
-    ref.observeAuthEventWithBlock { authData in
+    Reference.ref.observeAuthEventWithBlock { authData in
       
       if authData != nil {
         
@@ -110,11 +127,11 @@ class GroceryListTableViewController: UITableViewController {
     usersRef.observeEventType(.Value, withBlock: { (snapshot: FDataSnapshot!) in
       
       // Check to see if the snapshot has any data
-      if snapshot.exists() {
-        
-        // Get the number of online users from the childrenCount property
-       // self.backPath.title = "Back"
-        }
+//      if snapshot.exists() {
+//        
+//        // Get the number of online users from the childrenCount property
+//       // self.backPath.title = "Back"
+//        }
 //      } else {
 //        self.userCountBarButtonItem?.title = "0"
 //      }
@@ -126,27 +143,77 @@ class GroceryListTableViewController: UITableViewController {
     super.viewDidDisappear(animated)
     
   }
-  
+    func decodeImage(imageString base64: String) -> UIImage {
+        let imageRef = Reference.ref.childByAppendingPath("image")
+        
+        
+            
+            let base64EncodedString = base64
+            let imageData = NSData(base64EncodedString: base64EncodedString as! String,
+                options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+            let decodedImage = UIImage(data:imageData!)
+            //self.imageView2.image = decodedImage
+            return UIImage(data:imageData!)!
+            
+        
+   
+    }
+    
+    
   // MARK: UITableView Delegate methods
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath)
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> GroceryCell {
+    var cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! GroceryCell
     
     let groceryItem = items[indexPath.row]
-    
-    cell.textLabel?.text = groceryItem.name
 
-    cell.detailTextLabel?.text = groceryItem.addedByUser
+    
+    //cell.textLabel?.text = groceryItem.name
+    cell.headingLabel?.text = groceryItem.name
+    cell.button.setImage(decodeImage(imageString: groceryItem.image), forState: UIControlState.Normal)
+    cell.button.tag = indexPath.row
+    cell.button.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+//    cell.textLabel?.text = groceryItem.name
+    
+
+    
+   // cell.bkImageView.image = decodedImage
+
+    
+//    cell.detailTextLabel?.text = groceryItem.addedByUser
     
     // Determine whether the cell is checked
     //toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     
     return cell
   }
+    
+    func buttonClicked(sender:UIButton) {
+        let buttonRow = sender.tag
+}
+    
+    func pickImage() {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.allowsEditing = false
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+       // var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! GroceryCell
+//        cell.displayImageView.image = image
+    }
+    
+   
   
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     return true
@@ -178,25 +245,32 @@ class GroceryListTableViewController: UITableViewController {
     newPath = newPath + groceryItem.name.lowercaseString + "/"
     
     var newRef = refPath
-    if pathArray.count <= 0 {
+    if Reference.pathArray.count <= 0 {
     newRef = refPath + newPath
-    pathArray.append(newRef)
+    Reference.pathArray.append(newRef)
     }
     else{
-        pathArray.append((pathArray[pathArray.count - 1] + groceryItem.name.lowercaseString + "/"))
+        Reference.pathArray.append((Reference.pathArray[Reference.pathArray.count - 1] + groceryItem.name.lowercaseString + "/"))
     }
     //newRef = pathArray[pathArray.count - 1]
     
-    self.ref = Firebase(url: pathArray[pathArray.count - 1])
+    Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 1])
     
     
-    print(pathArray, pathArray.count)
+    print(Reference.pathArray, Reference.pathArray.count)
     
-    //self.tableView.reloadData()
     viewDidAppear(true)
     //self.tableView.reloadData()
     
-
+    }
+    
+    func callImagePicker() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
     
 //    // Determine whether the cell is checked and modify it's view properties
 //    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
@@ -216,19 +290,19 @@ class GroceryListTableViewController: UITableViewController {
 //      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
 //      cell.textLabel?.textColor = UIColor.grayColor()
 //      cell.detailTextLabel?.textColor = UIColor.grayColor()
-    }
-  
-  
+//    }}
+//    }
+//  
   // MARK: Add Item
     @IBAction func backLoad(sender: UIBarButtonItem) {
         
-        if pathArray.count >= 2 {
-        self.ref = Firebase(url: pathArray[pathArray.count - 2])
-        pathArray.removeLast()
-            print(pathArray, pathArray.count)
+        if Reference.pathArray.count >= 2 {
+        Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 2])
+        Reference.pathArray.removeLast()
+            print(Reference.pathArray, Reference.pathArray.count)
             // self.tableView.reloadData()
-            newPath = String(pathArray[pathArray.count - 1])
-            viewDidAppear(true)
+            newPath = String(Reference.pathArray[Reference.pathArray.count - 1])
+            self.viewDidAppear(true)
         }
         else{
             print("erase button")
@@ -246,25 +320,48 @@ class GroceryListTableViewController: UITableViewController {
       style: .Default) { (action: UIAlertAction) -> Void in
         
         // Get the text field for the item name
-        let textField = alert.textFields![0] 
+        let textField = alert.textFields![0]
+        let defaultimage = UIImage(named: "1")
+        if let image = defaultimage {
+                        let imageData = UIImageJPEGRepresentation(image, 0.2)
+                        let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+                        //print(base64String)
+                        let imageRef = Reference.ref.childByAppendingPath("image")
+            
+                        imageRef.setValue(base64String)
+            
+                        imageRef.observeEventType(.Value, withBlock: { snapshot in
+            
+                            let base64EncodedString = snapshot.value
+                            let imageData = NSData(base64EncodedString: base64EncodedString as! String,
+                                options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                            let decodedImage = UIImage(data:imageData!)
+                            
+                            }, withCancelBlock: { error in
+                                print(error.description)
+                        })
+            
+        // User must be set at Login or else error occours.
+//            print(self.user.email)
+//            print(base64String)
+//            print(textField.text!)
         // Create the grocery item from the struct
-        let groceryItem = GroceryItem(name: textField.text!, addedByUser: self.user.email, completed: false)
+        let groceryItem = GroceryItem(name: textField.text!, image: base64String, addedByUser: self.user.email, completed: false)
         
-        let groceryItemRef = self.ref.childByAppendingPath(textField.text!.lowercaseString)
-        print(groceryItemRef)
+        let groceryItemRef = Reference.ref.childByAppendingPath(textField.text!.lowercaseString)
         // Save the grocery items in its AnyObject form
         groceryItemRef.setValue(groceryItem.toAnyObject())
         self.viewDidAppear(true)
         
+        }
     }
-    
     let cancelAction = UIAlertAction(title: "Cancel",
       style: .Default) { (action: UIAlertAction) -> Void in
     }
     
     alert.addTextFieldWithConfigurationHandler {
       (textField: UITextField!) -> Void in
-    }
+        }
     
     alert.addAction(saveAction)
     alert.addAction(cancelAction)
@@ -276,6 +373,6 @@ class GroceryListTableViewController: UITableViewController {
   
 //  func userCountButtonDidTouch() {
 //    performSegueWithIdentifier(ListToUsers, sender: nil)
-//  }
   
 }
+
