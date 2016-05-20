@@ -26,8 +26,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     struct Reference {
          static var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
          static var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
-
-
+        static var extraRef: String? = ""
     }
 
   // MARK: Constants
@@ -70,7 +69,8 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     super.viewDidAppear(animated)
     print(Reference.ref)
     // [1] Call the queryOrderedByChild function to return a reference that queries by the "completed" property
-    
+    Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 1])
+
     Reference.ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
       
       var newItems = [GroceryItem]()
@@ -179,7 +179,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     cell.button.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
 //    cell.textLabel?.text = groceryItem.name
     
-
+    
     
    // cell.bkImageView.image = decodedImage
 
@@ -194,24 +194,28 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     
     func buttonClicked(sender:UIButton) {
         let buttonRow = sender.tag
+        var extraRef = String(items[buttonRow].ref!)
+        Reference.ref = Firebase(url: extraRef)
+        print(Reference.pathArray)
+        print(buttonRow)
 }
     
-    func pickImage() {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        imagePicker.allowsEditing = false
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        
-       // var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! GroceryCell
-//        cell.displayImageView.image = image
-    }
+//    func pickImage() {
+//        
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.delegate = self
+//        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//        imagePicker.allowsEditing = false
+//        self.presentViewController(imagePicker, animated: true, completion: nil)
+//    }
+//    
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+//        
+//        dismissViewControllerAnimated(true, completion: nil)
+//        
+//       // var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! GroceryCell
+////        cell.displayImageView.image = image
+//    }
     
    
   
@@ -257,21 +261,14 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 1])
     
     
-    print(Reference.pathArray, Reference.pathArray.count)
+//    print(Reference.pathArray, Reference.pathArray.count)
     
     viewDidAppear(true)
     //self.tableView.reloadData()
     
     }
     
-    func callImagePicker() {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
-        
-    }
-    
+
 //    // Determine whether the cell is checked and modify it's view properties
 //    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
 //    
@@ -306,6 +303,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
         }
         else{
             print("erase button")
+            
         }
         
     }

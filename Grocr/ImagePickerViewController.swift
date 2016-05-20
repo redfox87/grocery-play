@@ -13,7 +13,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
     
     var ref = GroceryListTableViewController.Reference.ref
     var imageContainer: UIImage?
-    
+    var extraRef = GroceryListTableViewController.Reference.extraRef
     let imagePicker = UIImagePickerController()
     
 //    @IBAction func saveImageUp(sender: AnyObject) {
@@ -101,7 +101,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
             let imageData = UIImageJPEGRepresentation(image, 0.2)
             let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
 //            print(base64String)
-            let imageRef = ref.childByAppendingPath("image")
+            let imageRef = GroceryListTableViewController.Reference.ref.childByAppendingPath("image")
             
             imageRef.setValue(base64String)
             performSegueWithIdentifier("goBack", sender: nil)
