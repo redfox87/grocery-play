@@ -27,6 +27,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
          static var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
          static var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
         static var extraRef: String? = ""
+        static var buttonRowRef: Int?
     }
 
   // MARK: Constants
@@ -178,9 +179,10 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     cell.button.tag = indexPath.row
     cell.button.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
 //    cell.textLabel?.text = groceryItem.name
-    
-    
-    
+    cell.infoButton.tag = indexPath.row
+   cell.infoButton.addTarget(self, action: "buttonClicked2:", forControlEvents: UIControlEvents.TouchUpInside)
+   
+   
    // cell.bkImageView.image = decodedImage
 
     
@@ -199,6 +201,26 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
         print(Reference.pathArray)
         print(buttonRow)
 }
+    func buttonClicked2(sender:UIButton){
+        Reference.buttonRowRef = sender.tag
+        print(sender.tag)
+
+        performSegueWithIdentifier("infoViewSegue", sender: self)
+    }
+    
+    
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "infoViewSegue"{
+            var SecondVC: infoView = segue.destinationViewController as! infoView
+            
+            SecondVC.receivedText = items[Reference.buttonRowRef!].name
+            SecondVC.receivedImage = decodeImage(imageString: items[Reference.buttonRowRef!].image)
+                print(SecondVC.receivedImage)
+            }
+    
+    
+    }
+    
     
 //    func pickImage() {
 //        
@@ -368,6 +390,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
       animated: true,
       completion: nil)
   }
+  
   
 //  func userCountButtonDidTouch() {
 //    performSegueWithIdentifier(ListToUsers, sender: nil)
