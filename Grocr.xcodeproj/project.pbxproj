@@ -18,8 +18,11 @@
 		BB7DA5111B42C8100018B530 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7DA5101B42C8100018B530 /* User.swift */; };
 		F53DABBE1CEBB5B5001F5D11 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F53DABBD1CEBB5B5001F5D11 /* 2.jpg */; };
 		F54251721CEE3F270092C603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54251711CEE3F270092C603 /* Main.storyboard */; };
+<<<<<<< HEAD
 		F54251741CEFF7BF0092C603 /* infoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54251731CEFF7BF0092C603 /* infoView.swift */; };
 		F54251761CF221120092C603 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F54251751CF221120092C603 /* 1.png */; };
+=======
+>>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 		F5DC124B1CEAAED10029377C /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */; };
 		F5DC124D1CEB904C0029377C /* GroceryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC124C1CEB904C0029377C /* GroceryCell.swift */; };
 /* End PBXBuildFile section */
@@ -40,8 +43,11 @@
 		BB7DA5101B42C8100018B530 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F53DABBD1CEBB5B5001F5D11 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = ../../2.jpg; sourceTree = "<group>"; };
 		F54251711CEE3F270092C603 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F54251731CEFF7BF0092C603 /* infoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoView.swift; sourceTree = "<group>"; };
 		F54251751CF221120092C603 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../1.png; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 		F599D9265F4B40571F432E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		F5DC124C1CEB904C0029377C /* GroceryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryCell.swift; sourceTree = "<group>"; };
@@ -118,7 +124,6 @@
 				F5DC124C1CEB904C0029377C /* GroceryCell.swift */,
 				F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */,
 				BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */,
-				F54251731CEFF7BF0092C603 /* infoView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,7 +277,6 @@
 				BB30CD4A1B439B60004B3177 /* OnlineUsersTableViewController.swift in Sources */,
 				BB7DA5111B42C8100018B530 /* User.swift in Sources */,
 				BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */,
-				F54251741CEFF7BF0092C603 /* infoView.swift in Sources */,
 				F5DC124B1CEAAED10029377C /* ImagePickerViewController.swift in Sources */,
 				F5DC124D1CEB904C0029377C /* GroceryCell.swift in Sources */,
 			);

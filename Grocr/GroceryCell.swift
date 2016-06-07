@@ -20,7 +20,6 @@ class GroceryCell: UITableViewCell {
     }
     
        
-    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var headingLabel: UILabel!
