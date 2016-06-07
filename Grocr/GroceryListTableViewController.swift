@@ -71,8 +71,8 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     print(Reference.ref)
     // [1] Call the queryOrderedByChild function to return a reference that queries by the "completed" property
     Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 1])
-
-    Reference.ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
+    
+    Reference.ref.queryOrderedByChild("name").observeEventType(.Value, withBlock: { snapshot in
       
       var newItems = [GroceryItem]()
 //        print(snapshot)
@@ -215,6 +215,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
             
             SecondVC.receivedText = items[Reference.buttonRowRef!].name
             SecondVC.receivedImage = decodeImage(imageString: items[Reference.buttonRowRef!].image)
+            SecondVC.receivedText2 = newPath
                 print(SecondVC.receivedImage)
             }
     

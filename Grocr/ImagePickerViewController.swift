@@ -16,48 +16,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
     var extraRef = GroceryListTableViewController.Reference.extraRef
     let imagePicker = UIImagePickerController()
     
-//    @IBAction func saveImageUp(sender: AnyObject) {
-//        if let image = imageView.image {
-//            let imageData = UIImageJPEGRepresentation(image, 0.2)
-//            let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-//            print(base64String)
-//            let imageRef = ref.childByAppendingPath("image_path")
-//
-//            imageRef.setValue(base64String)
-//            
-////            imageRef.observeEventType(.Value, withBlock: { snapshot in
-////                
-////                let base64EncodedString = snapshot.value
-////                let imageData = NSData(base64EncodedString: base64EncodedString as! String,
-////                    options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-////                let decodedImage = UIImage(data:imageData!)
-////                self.imageView2.image = decodedImage
-////                
-////                }, withCancelBlock: { error in
-////                    print(error.description)
-////            })
-//
-//        }
-//        
-//    }
-    
-//
-//    @IBAction func LoadImageUp(sender: AnyObject) {
-//        let imageRef = ref.childByAppendingPath("image_path")
-//
-//        imageRef.observeEventType(.Value, withBlock: { snapshot in
-//            
-//            let base64EncodedString = snapshot.value
-//            let imageData = NSData(base64EncodedString: base64EncodedString as! String,
-//                options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-//            let decodedImage = UIImage(data:imageData!)
-//            self.imageView2.image = decodedImage
-//            
-//            }, withCancelBlock: { error in
-//                print(error.description)
-//        })
-//        
-//    }
+
   func loadImageButtonTapped() {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
@@ -71,12 +30,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         
         imagePicker.delegate = self
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .PhotoLibrary
-//        
-//        presentViewController(imagePicker, animated: true, completion: nil)
-//        
-//        imagePicker
+
     
     }
     
@@ -108,20 +62,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
 
         }
         
-        //Decode Image
-//        let imageRef = ref.childByAppendingPath("image")
-//        
-//        imageRef.observeEventType(.Value, withBlock: { snapshot in
-//            
-//            let base64EncodedString = snapshot.value
-//            let imageData = NSData(base64EncodedString: base64EncodedString as! String,
-//                options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-//            let decodedImage = UIImage(data:imageData!)
-//            self.imageView2.image = decodedImage
-//            
-//            }, withCancelBlock: { error in
-//                print(error.description)
-//        })
+
     }
     
    

@@ -15,8 +15,11 @@ class infoView: UIViewController {
 
     @IBOutlet weak var infoLabel: UILabel!
     var receivedText = ""
+    var receivedText2 = ""
+
     var receivedImage: UIImage? = UIImage(named: "1")
     @IBOutlet weak var infoImage: UIImageView!
+    @IBOutlet weak var newRefPath: UILabel!
    
     
     override func viewDidLoad() {
@@ -24,6 +27,7 @@ class infoView: UIViewController {
         print(receivedImage)
         infoLabel.text = receivedText
         infoImage.image = receivedImage!
+        newRefPath.text = receivedText2
         
     }
 

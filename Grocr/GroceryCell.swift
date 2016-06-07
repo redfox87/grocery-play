@@ -23,7 +23,6 @@ class GroceryCell: UITableViewCell {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var button: UIButton!
     
-    @IBOutlet weak var bkImageView: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
