@@ -23,12 +23,11 @@
 import UIKit
 import QuartzCore
 
-
 class LoginViewController: UIViewController {
 
   // MARK: Constants
   let LoginToList = "LoginToList"
-    
+  
   // MARK: Outlets
   @IBOutlet weak var textFieldLoginEmail: UITextField!
   @IBOutlet weak var textFieldLoginPassword: UITextField!

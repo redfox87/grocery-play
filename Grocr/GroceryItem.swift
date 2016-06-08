@@ -26,16 +26,14 @@ struct GroceryItem {
   
   let key: String!
   let name: String!
-  let image: String!
   let addedByUser: String!
   var ref: Firebase?
   var completed: Bool!
   
   // Initialize from arbitrary data
-    init(name: String, image: String, addedByUser: String, completed: Bool, key: String = "") {
+  init(name: String, addedByUser: String, completed: Bool, key: String = "") {
     self.key = key
     self.name = name
-    self.image = image
     self.addedByUser = addedByUser
     self.completed = completed
     self.ref = nil
@@ -43,8 +41,9 @@ struct GroceryItem {
   
   init(snapshot: FDataSnapshot) {
     key = snapshot.key
+    print(snapshot.key)
+    print(snapshot.ref)
     name = snapshot.value["name"] as! String
-    image = snapshot.value["image"] as! String
     addedByUser = snapshot.value["addedByUser"] as! String
     completed = snapshot.value["completed"] as! Bool
     ref = snapshot.ref
@@ -53,7 +52,6 @@ struct GroceryItem {
   func toAnyObject() -> AnyObject {
     return [
       "name": name,
-      "image": image,
       "addedByUser": addedByUser,
       "completed": completed
     ]

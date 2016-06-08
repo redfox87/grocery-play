@@ -22,6 +22,7 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class GroceryListTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     struct Reference {
          static var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
@@ -29,25 +30,22 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
         static var extraRef: String? = ""
         static var buttonRowRef: Int?
     }
+=======
+class GroceryListTableViewController: UITableViewController {
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
 
   // MARK: Constants
   let ListToUsers = "ListToUsers"
-  let imagePicker = UIImagePickerController()
-
-  // MARK: Properties
+  
+  // MARK: Properties 
   var items = [GroceryItem]()
-//  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+  var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
   let usersRef = Firebase(url: "https://grocr-app.firebaseio.com/online")
   var user: User!
   var backPath: UIBarButtonItem!
   var newPath = ""
-//  var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
+  var pathArray = ["https://containers.firebaseio.com/grocery-items/"]
   var newRef = ""
-    var label1 = UILabel.self
-    var label2 = UILabel.self
-    
-    
-    
   // MARK: UIViewController Lifecycle
   
   override func viewDidLoad() {
@@ -66,47 +64,47 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
   }
   
   override func viewDidAppear(animated: Bool) {
-    //var ref = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
+    //var myRef = Firebase(url: "https://containers.firebaseio.com/grocery-items/")
     super.viewDidAppear(animated)
-    print(Reference.ref)
+    
     // [1] Call the queryOrderedByChild function to return a reference that queries by the "completed" property
+<<<<<<< HEAD
     Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 1])
 
     Reference.ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
+=======
+    
+    ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
       
       var newItems = [GroceryItem]()
-//        print(snapshot)
+        print(self.newPath)
       
       for item in snapshot.children {
         
-        if (item.value["name"] != nil && item.value["image"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil) {
+        if (item.value["name"] != nil && item.value["completed"]  != nil && item.value["addedByUser"] != nil) {
             self.items = newItems
-//            self.tableView.reloadData()
+            //self.tableView.reloadData()
             
             let groceryItem = GroceryItem(snapshot: item as! FDataSnapshot)
             newItems.append(groceryItem)
-        }
-        self.items = newItems
-        self.tableView.reloadData()
-//        print(self.ref)
-            //self.ref = snapshot.ref
-        }})
+            //myRef = snapshot.ref
             //print(groceryItem)
-            //
-//        }
+            
+        }
       
       //self.tableView.reloadData()
        // print(snapshot.ref)
-//        }
-//        //self.items = newItems
-//        //if (myRef == self.ref) {
-//            self.items = newItems
-//            self.tableView.reloadData()
+        }
+        //self.items = newItems
+        //if (myRef == self.ref) {
+            self.items = newItems
+            self.tableView.reloadData()
     //}
-//        })
+        })
     
     
-    Reference.ref.observeAuthEventWithBlock { authData in
+    ref.observeAuthEventWithBlock { authData in
       
       if authData != nil {
         
@@ -128,11 +126,11 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     usersRef.observeEventType(.Value, withBlock: { (snapshot: FDataSnapshot!) in
       
       // Check to see if the snapshot has any data
-//      if snapshot.exists() {
-//        
-//        // Get the number of online users from the childrenCount property
-//       // self.backPath.title = "Back"
-//        }
+      if snapshot.exists() {
+        
+        // Get the number of online users from the childrenCount property
+       // self.backPath.title = "Back"
+        }
 //      } else {
 //        self.userCountBarButtonItem?.title = "0"
 //      }
@@ -144,33 +142,18 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     super.viewDidDisappear(animated)
     
   }
-    func decodeImage(imageString base64: String) -> UIImage {
-        let imageRef = Reference.ref.childByAppendingPath("image")
-        
-        
-            
-            let base64EncodedString = base64
-            let imageData = NSData(base64EncodedString: base64EncodedString as! String,
-                options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-            let decodedImage = UIImage(data:imageData!)
-            //self.imageView2.image = decodedImage
-            return UIImage(data:imageData!)!
-            
-        
-   
-    }
-    
-    
+  
   // MARK: UITableView Delegate methods
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> GroceryCell {
-    var cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! GroceryCell
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath)
     
     let groceryItem = items[indexPath.row]
+<<<<<<< HEAD
 
     
     //cell.textLabel?.text = groceryItem.name
@@ -187,12 +170,19 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
 
     
 //    cell.detailTextLabel?.text = groceryItem.addedByUser
+=======
+    
+    cell.textLabel?.text = groceryItem.name
+
+    cell.detailTextLabel?.text = groceryItem.addedByUser
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
     
     // Determine whether the cell is checked
     //toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     
     return cell
   }
+<<<<<<< HEAD
     
     func buttonClicked(sender:UIButton) {
         let buttonRow = sender.tag
@@ -240,6 +230,8 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
 //    }
     
    
+=======
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
   
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     return true
@@ -271,26 +263,36 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     newPath = newPath + groceryItem.name.lowercaseString + "/"
     
     var newRef = refPath
-    if Reference.pathArray.count <= 0 {
+    if pathArray.count <= 0 {
     newRef = refPath + newPath
-    Reference.pathArray.append(newRef)
+    pathArray.append(newRef)
     }
     else{
-        Reference.pathArray.append((Reference.pathArray[Reference.pathArray.count - 1] + groceryItem.name.lowercaseString + "/"))
+        pathArray.append((pathArray[pathArray.count - 1] + groceryItem.name.lowercaseString + "/"))
     }
     //newRef = pathArray[pathArray.count - 1]
     
-    Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 1])
+    self.ref = Firebase(url: pathArray[pathArray.count - 1])
     
     
+<<<<<<< HEAD
 //    print(Reference.pathArray, Reference.pathArray.count)
+=======
+    print(pathArray, pathArray.count)
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
     
+    //self.tableView.reloadData()
     viewDidAppear(true)
     //self.tableView.reloadData()
     
+<<<<<<< HEAD
     }
     
 
+=======
+
+    
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
 //    // Determine whether the cell is checked and modify it's view properties
 //    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
 //    
@@ -309,19 +311,19 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
 //      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
 //      cell.textLabel?.textColor = UIColor.grayColor()
 //      cell.detailTextLabel?.textColor = UIColor.grayColor()
-//    }}
-//    }
-//  
+    }
+  
+  
   // MARK: Add Item
     @IBAction func backLoad(sender: UIBarButtonItem) {
         
-        if Reference.pathArray.count >= 2 {
-        Reference.ref = Firebase(url: Reference.pathArray[Reference.pathArray.count - 2])
-        Reference.pathArray.removeLast()
-            print(Reference.pathArray, Reference.pathArray.count)
+        if pathArray.count >= 2 {
+        self.ref = Firebase(url: pathArray[pathArray.count - 2])
+        pathArray.removeLast()
+            print(pathArray, pathArray.count)
             // self.tableView.reloadData()
-            newPath = String(Reference.pathArray[Reference.pathArray.count - 1])
-            self.viewDidAppear(true)
+            newPath = String(pathArray[pathArray.count - 1])
+            viewDidAppear(true)
         }
         else{
             print("erase button")
@@ -340,48 +342,25 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
       style: .Default) { (action: UIAlertAction) -> Void in
         
         // Get the text field for the item name
-        let textField = alert.textFields![0]
-        let defaultimage = UIImage(named: "1")
-        if let image = defaultimage {
-                        let imageData = UIImageJPEGRepresentation(image, 0.2)
-                        let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-                        //print(base64String)
-                        let imageRef = Reference.ref.childByAppendingPath("image")
-            
-                        imageRef.setValue(base64String)
-            
-                        imageRef.observeEventType(.Value, withBlock: { snapshot in
-            
-                            let base64EncodedString = snapshot.value
-                            let imageData = NSData(base64EncodedString: base64EncodedString as! String,
-                                options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-                            let decodedImage = UIImage(data:imageData!)
-                            
-                            }, withCancelBlock: { error in
-                                print(error.description)
-                        })
-            
-        // User must be set at Login or else error occours.
-//            print(self.user.email)
-//            print(base64String)
-//            print(textField.text!)
+        let textField = alert.textFields![0] 
         // Create the grocery item from the struct
-        let groceryItem = GroceryItem(name: textField.text!, image: base64String, addedByUser: self.user.email, completed: false)
+        let groceryItem = GroceryItem(name: textField.text!, addedByUser: self.user.email, completed: false)
         
-        let groceryItemRef = Reference.ref.childByAppendingPath(textField.text!.lowercaseString)
+        let groceryItemRef = self.ref.childByAppendingPath(textField.text!.lowercaseString)
+        print(groceryItemRef)
         // Save the grocery items in its AnyObject form
         groceryItemRef.setValue(groceryItem.toAnyObject())
         self.viewDidAppear(true)
         
-        }
     }
+    
     let cancelAction = UIAlertAction(title: "Cancel",
       style: .Default) { (action: UIAlertAction) -> Void in
     }
     
     alert.addTextFieldWithConfigurationHandler {
       (textField: UITextField!) -> Void in
-        }
+    }
     
     alert.addAction(saveAction)
     alert.addAction(cancelAction)
@@ -394,6 +373,6 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
   
 //  func userCountButtonDidTouch() {
 //    performSegueWithIdentifier(ListToUsers, sender: nil)
+//  }
   
 }
-
