@@ -19,8 +19,11 @@
 		F53DABBE1CEBB5B5001F5D11 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F53DABBD1CEBB5B5001F5D11 /* 2.jpg */; };
 		F54251721CEE3F270092C603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54251711CEE3F270092C603 /* Main.storyboard */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		F54251741CEFF7BF0092C603 /* infoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54251731CEFF7BF0092C603 /* infoView.swift */; };
 		F54251761CF221120092C603 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F54251751CF221120092C603 /* 1.png */; };
+=======
+>>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 =======
 >>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 		F5DC124B1CEAAED10029377C /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */; };
@@ -44,8 +47,11 @@
 		F53DABBD1CEBB5B5001F5D11 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = ../../2.jpg; sourceTree = "<group>"; };
 		F54251711CEE3F270092C603 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		F54251731CEFF7BF0092C603 /* infoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoView.swift; sourceTree = "<group>"; };
 		F54251751CF221120092C603 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../1.png; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 =======
 >>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 		F599D9265F4B40571F432E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };

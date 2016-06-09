@@ -200,6 +200,7 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
         print(buttonRow)
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
     func buttonClicked2(sender:UIButton){
         Reference.buttonRowRef = sender.tag
         print(sender.tag)
@@ -221,6 +222,8 @@ class GroceryListTableViewController: UITableViewController, UIImagePickerContro
     
     }
     
+=======
+>>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 =======
 >>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
     
