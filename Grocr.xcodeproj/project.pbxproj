@@ -10,12 +10,14 @@
 		941A68C9047CFC613264BFB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F599D9265F4B40571F432E78 /* libPods.a */; };
 		BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385611B3DD5AB0079CD01 /* AppDelegate.swift */; };
 		BB2385641B3DD5AB0079CD01 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */; };
+		BB2385671B3DD5AB0079CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2385651B3DD5AB0079CD01 /* Main.storyboard */; };
 		BB2385691B3DD5AB0079CD01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2385681B3DD5AB0079CD01 /* Images.xcassets */; };
 		BB23856C1B3DD5AB0079CD01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB23856A1B3DD5AB0079CD01 /* LaunchScreen.xib */; };
 		BB2385841B3DD8660079CD01 /* GroceryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385831B3DD8660079CD01 /* GroceryListTableViewController.swift */; };
 		BB23858A1B3DD9640079CD01 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385891B3DD9640079CD01 /* GroceryItem.swift */; };
 		BB30CD4A1B439B60004B3177 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */; };
 		BB7DA5111B42C8100018B530 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7DA5101B42C8100018B530 /* User.swift */; };
+<<<<<<< HEAD
 		F53DABBE1CEBB5B5001F5D11 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F53DABBD1CEBB5B5001F5D11 /* 2.jpg */; };
 		F54251721CEE3F270092C603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54251711CEE3F270092C603 /* Main.storyboard */; };
 <<<<<<< HEAD
@@ -28,6 +30,12 @@
 >>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
 		F5DC124B1CEAAED10029377C /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */; };
 		F5DC124D1CEB904C0029377C /* GroceryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC124C1CEB904C0029377C /* GroceryCell.swift */; };
+<<<<<<< HEAD
+=======
+		F5DC124F1CEB958A0029377C /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5DC124E1CEB958A0029377C /* 1.jpg */; };
+=======
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
+>>>>>>> origin/Develop
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,7 @@
 		BB2385601B3DD5AB0079CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB2385611B3DD5AB0079CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB2385661B3DD5AB0079CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB2385681B3DD5AB0079CD01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB23856B1B3DD5AB0079CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BB2385831B3DD8660079CD01 /* GroceryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListTableViewController.swift; sourceTree = "<group>"; };
@@ -44,11 +53,13 @@
 		BB2385891B3DD9640079CD01 /* GroceryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 		BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
 		BB7DA5101B42C8100018B530 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F53DABBD1CEBB5B5001F5D11 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = ../../2.jpg; sourceTree = "<group>"; };
 		F54251711CEE3F270092C603 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 <<<<<<< HEAD
 <<<<<<< HEAD
 		F54251731CEFF7BF0092C603 /* infoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoView.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F54251751CF221120092C603 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../1.png; sourceTree = "<group>"; };
 =======
 >>>>>>> parent of a2f07f1... detail view working.  needs fine tuning.
@@ -57,6 +68,11 @@
 		F599D9265F4B40571F432E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		F5DC124C1CEB904C0029377C /* GroceryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryCell.swift; sourceTree = "<group>"; };
+=======
+=======
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
+		F599D9265F4B40571F432E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> origin/Develop
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +122,11 @@
 				BB2385821B3DD8490079CD01 /* Layouts */,
 				BB7DA5121B42CA790018B530 /* Other */,
 				BB2385681B3DD5AB0079CD01 /* Images.xcassets */,
+<<<<<<< HEAD
 				F53DABBD1CEBB5B5001F5D11 /* 2.jpg */,
 				F54251751CF221120092C603 /* 1.png */,
+=======
+>>>>>>> origin/Develop
 				BB23855F1B3DD5AB0079CD01 /* Supporting Files */,
 			);
 			path = Grocr;
@@ -127,8 +146,6 @@
 			children = (
 				BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */,
 				BB2385831B3DD8660079CD01 /* GroceryListTableViewController.swift */,
-				F5DC124C1CEB904C0029377C /* GroceryCell.swift */,
-				F5DC124A1CEAAED10029377C /* ImagePickerViewController.swift */,
 				BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */,
 			);
 			name = Controllers;
@@ -137,7 +154,7 @@
 		BB2385821B3DD8490079CD01 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				F54251711CEE3F270092C603 /* Main.storyboard */,
+				BB2385651B3DD5AB0079CD01 /* Main.storyboard */,
 				BB23856A1B3DD5AB0079CD01 /* LaunchScreen.xib */,
 			);
 			name = Layouts;
@@ -229,9 +246,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				F54251721CEE3F270092C603 /* Main.storyboard in Resources */,
 				F53DABBE1CEBB5B5001F5D11 /* 2.jpg in Resources */,
 				F54251761CF221120092C603 /* 1.png in Resources */,
+=======
+				BB2385671B3DD5AB0079CD01 /* Main.storyboard in Resources */,
+>>>>>>> origin/Develop
 				BB23856C1B3DD5AB0079CD01 /* LaunchScreen.xib in Resources */,
 				BB2385691B3DD5AB0079CD01 /* Images.xcassets in Resources */,
 			);
@@ -283,14 +304,29 @@
 				BB30CD4A1B439B60004B3177 /* OnlineUsersTableViewController.swift in Sources */,
 				BB7DA5111B42C8100018B530 /* User.swift in Sources */,
 				BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+				F54251741CEFF7BF0092C603 /* infoView.swift in Sources */,
+>>>>>>> origin/Develop
 				F5DC124B1CEAAED10029377C /* ImagePickerViewController.swift in Sources */,
 				F5DC124D1CEB904C0029377C /* GroceryCell.swift in Sources */,
+=======
+>>>>>>> parent of a332658... UIPicker works and returns to correct tableview display data.  UIImagePicker needs fine tuning on the reference path it saves it's pictures (essentially one off from the correct, the parent data class is being assigned.)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BB2385651B3DD5AB0079CD01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB2385661B3DD5AB0079CD01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		BB23856A1B3DD5AB0079CD01 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
